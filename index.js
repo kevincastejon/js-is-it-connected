@@ -7,7 +7,7 @@ class IsItConnected extends events {
     this.connected = false;
   }
   watch() {
-    testConnection().then(() => {
+    this.testConnection().then(() => {
       if (!this.connected) {
         this.connected = true;
         this.emit('online');

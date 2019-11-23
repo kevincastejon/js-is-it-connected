@@ -3,6 +3,7 @@ const events = require('events');
 
 class IsItConnected extends events {
   constructor() {
+    super();
     this.connected = false;
   }
   watch() {

@@ -30,3 +30,4 @@ class IsItConnected extends events {
     }))
   }
 }
+module.exports = new IsItConnected()

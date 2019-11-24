@@ -12,18 +12,22 @@ class IsItConnected extends events {
         this.connected = true;
         this.emit('online');
       }
-      this.watch();
+      setTimeout(() => {
+        this.watch();
+      }, 5000);
     }).catch(() => {
       if (this.connected) {
         this.connected = false;
         this.emit('offline');
       }
-      this.watch();
+      setTimeout(() => {
+        this.watch();
+      }, 5000);
     })
   }
   testConnection() {
     return(new Promise((res,rej) => {
-      fetch('https://www.google.com').then((data) => {
+      fetch('https://www.google.com',{timeout:5000}).then((data) => {
         res()
       }).catch((err) => {
         rej()
@@ -32,3 +36,11 @@ class IsItConnected extends events {
   }
 }
 module.exports = new IsItConnected()
+// const iic = new IsItConnected();
+// iic.on('online', () => {
+//   console.log('online');
+// });
+// iic.off('offline', () => {
+//   console.log('offline');
+// });
+// iic.watch()

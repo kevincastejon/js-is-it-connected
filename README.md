@@ -9,15 +9,15 @@ npm i is-it-connected
 
 ## Usage
 ```
-const IsItConnected = require('./index');
-const isItConnected = new IsItConnected();
-isItConnected.on('online', () => {
+const Watcher = require('is-it-connected');
+const watch = new Watcher();
+watch.on('online', () => {
   console.log('Connected.');
 });
-isItConnected.on('offline', () => {
+watch.on('offline', () => {
   console.log('Connection lost !');
 });
-isItConnected.watch();
+watch.watch();
 ```
 
 ## API

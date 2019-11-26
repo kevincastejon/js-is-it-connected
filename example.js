@@ -1,9 +1,9 @@
-const IsItConnected = require('./index');
-const isItConnected = new IsItConnected();
-isItConnected.on('online', () => {
+const Watcher = require('./index');
+const watcher = new Watcher();
+watcher.on('online', () => {
   console.log('Connected.');
 });
-isItConnected.on('offline', () => {
+watcher.on('offline', () => {
   console.log('Connection lost !');
 });
-isItConnected.watch();
+watcher.watch();

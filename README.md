@@ -7,17 +7,22 @@
 npm i is-it-connected
 ```
 
+## Test
+```
+node ./node_modules/is-it-connected/example.js
+```
+
 ## Usage
 ```
 const Watcher = require('is-it-connected');
-const watch = new Watcher();
-watch.on('online', () => {
+const watcher = new Watcher();
+watcher.on('online', () => {
   console.log('Connected.');
 });
-watch.on('offline', () => {
+watcher.on('offline', () => {
   console.log('Connection lost !');
 });
-watch.watch();
+watcher.watch();
 ```
 
 ## API

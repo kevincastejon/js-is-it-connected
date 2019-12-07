@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+const axios = require('axios');
 const events = require('events');
 
 class IsItConnected extends events {
@@ -80,7 +80,7 @@ class IsItConnected extends events {
   }
   _testConnection() {
     return(new Promise((res,rej) => {
-      fetch(this._urlTest,{timeout:this._timeout}).then((data) => {
+      axios(this._urlTest,{timeout:this._timeout}).then((data) => {
         res()
       }).catch((err) => {
         rej()
